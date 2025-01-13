@@ -3,6 +3,7 @@ import { defineConfig } from 'vitepress'
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   base: "./",
+  lang:"zh-CN",
   title: "煮酒话短长",
   description: "我的地盘，我的酒，与君共饮，乐悠悠！！！",
   themeConfig: {
