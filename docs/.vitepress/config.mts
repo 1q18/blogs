@@ -2,6 +2,7 @@ import { defineConfig } from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
+  base: "./",
   title: "煮酒话短长",
   description: "我的地盘，我的酒，与君共饮，乐悠悠！！！",
   themeConfig: {
@@ -22,7 +23,7 @@ export default defineConfig({
     ],
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
+      { icon: 'github', link: 'https://github.com/kongyinzhong/blogs' }
     ]
   }
 })
