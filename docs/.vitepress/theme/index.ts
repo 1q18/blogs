@@ -11,7 +11,7 @@ export default {
       // https://vitepress.dev/guide/extending-default-theme#layout-slots
     })
   },
-  async enhanceApp({ app, router, siteData }) {
+  enhanceApp({ app, router, siteData }) {
     // ...
     // if (!import.meta.env.SSR) {
     //   const plugin = await import('./lib-that-access-window-on-import')
