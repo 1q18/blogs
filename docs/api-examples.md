@@ -11,17 +11,8 @@ The main `useData()` API can be used to access site, theme, and page data for th
 ```md
 <script setup>
 import { useData } from 'vitepress'
-import {onMounted} from 'vue'
-
-onMounted(() => {
-  import('./lib-that-access-window-on-import').then((module) => {
-    // use code
-  })
-})
-
 
 const { theme, page, frontmatter } = useData()
-
 </script>
 
 ## Results

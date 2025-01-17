@@ -8,16 +8,17 @@ export default defineConfig({
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
-      { text: 'Home', link: '/' },
-      { text: 'Examples', link: '/markdown-examples' }
+      { text: '首页', link: '/' },
+      { text: '笔记', link: '/git/gitErrorCheck' }
     ],
 
     sidebar: [
       {
-        text: 'Examples',
+        text: '工作笔记',
         items: [
-          { text: 'Markdown Examples', link: '/markdown-examples' },
-          { text: 'Runtime API Examples', link: '/api-examples' }
+          { text: 'git写错分支', link: '/git/gitErrorCheck' },
+          { text: 'mac安装Mysql', link: '/macInstallMysql' },
+          { text: '钉钉对接', link: '/dingding' },
         ]
       }
     ],
