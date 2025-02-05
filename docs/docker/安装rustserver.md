@@ -59,7 +59,7 @@ docker-compose pull && docker-compose -f docker-compose.yaml up -d
 #### 查看生成的秘钥
 cat /root/docker/rustdesk/data/root/id_xxxx.pub
 
-![中继服务器设置](../images/docker/rustdesk_cli.png)
+![中继服务器设置](../public/docker/rustdesk_cli.png)
 
 
 

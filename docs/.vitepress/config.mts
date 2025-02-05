@@ -25,7 +25,7 @@ export default defineConfig({
         text: 'docker',
         items: [
           { text: 'docker安装', link: '/docker/安装docker' },
-          { text: 'rustserver自建服务器', link: '/docker/安装restserver' }
+          { text: 'rustserver自建服务器', link: '/docker/安装rustserver' }
         ]
       }
     ],
