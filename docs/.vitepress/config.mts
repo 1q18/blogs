@@ -20,6 +20,12 @@ export default defineConfig({
           { text: 'mac安装Mysql', link: '/macInstallMysql' },
           { text: '钉钉对接', link: '/dingding' },
         ]
+      },
+      {
+        text: 'docker',
+        items: [
+          { text: 'docker安装', link: '/docker/安装docker' }
+        ]
       }
     ],
 
