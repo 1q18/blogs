@@ -23,7 +23,7 @@ yum-config-manager --add-repo http://mirrors.aliyun.com/docker-ce/linux/centos/d
 4. 安装docker
 ```shell
 # 查看版本
-# yum list docker-ce --showduplicates | sort -r
+yum list docker-ce --showduplicates | sort -r
 # 安装
 yum install docker-ce docker-ce-cli containerd.io
 ```
@@ -41,12 +41,21 @@ docker run --rm hello-world
 #### Docker Compose 安装
 7. 安装 docker compose
 ``` shell
-yum install -y  docker-compose-plugin
+# 下载文件
+sudo curl -L "https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose 
+# 移动文件到usr/local/bin 目录
+cd  /usr/local/bin/docker-compose
+# 添加可执行权限
+chmod +x /usr/local/bin/docker-compose
+# 验证
+docker-compose --version
 ```
 ### 常用命令
 
 Docker 常用命令
 ```shell
+# 搜索镜像
+docker search tutorial
 # 查看所有容器，包括未运行
 docker ps -a
 # 通过镜像简单创建并启动容器(还有很多命令参数，可以搜索学习一下)
@@ -90,4 +99,39 @@ docker-compose up  --build -d
 docker-compose down
 # 停止并删除容器、网络、卷以及构建的镜像
 docker-compose down --volumes --rmi all
+# 使用最新镜像
+docker-compose pull && docker-compose -f docker-compose.yaml up -d
 ```
+
+### 镜像加速
+
+[阿里加速地址](https://cr.console.aliyun.com/cn-hangzhou/instances/mirrors)
+针对Docker客户端版本大于 1.10.0 的用户
+
+您可以通过修改daemon配置文件/etc/docker/daemon.json来使用加速器
+```shell 
+sudo mkdir -p /etc/docker
+sudo tee /etc/docker/daemon.json <<-'EOF'
+{
+    "registry-mirrors": [
+        "https://mirror.aliyuncs.com", 
+        "https://mirror.ccs.tencentyun.com", 
+        "https://mirror.baidubce.com", 
+        "https://docker.mirrors.ustc.edu.cn", 
+        "https://docker.nju.edu.cn", 
+        "https://docker.m.daocloud.io"
+    ]
+ }
+
+sudo systemctl daemon-reload
+sudo systemctl restart docker
+```
+
+
+Docker 官方和国内很多云服务商都提供了国内加速器服务，例如：
+
+- 科大镜像：https://docker.mirrors.ustc.edu.cn
+- 网易：https://hub-mirror.c.163.com
+- 阿里云：https://<你的ID>.mirror.aliyuncs.com
+- 七牛云加速器：https://reg-mirror.qiniu.com
+
