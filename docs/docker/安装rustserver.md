@@ -1,5 +1,6 @@
-# docker-compose 安装rustserver
+# docker-compose 安装rustserver 
 
+##  rustServer 自建服务器
 
 docker-compose.yaml
 ```
