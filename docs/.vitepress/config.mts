@@ -9,7 +9,8 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: '首页', link: '/' },
-      { text: '笔记', link: '/git/gitErrorCheck' }
+      { text: '笔记', link: '/git/gitErrorCheck' },
+      { text: '规则', link: '/规则' }
     ],
 
     sidebar: [
