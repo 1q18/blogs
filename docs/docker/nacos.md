@@ -53,9 +53,6 @@ services:
     ports:
       - "8848:8848"
       - "9848:9848"
-    depends_on:
-      mysql:
-        condition: service_healthy
     restart: always
 ```
 
