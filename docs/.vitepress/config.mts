@@ -29,6 +29,7 @@ export default defineConfig({
           { text: 'rustserver自建服务器', link: '/docker/安装rustserver' },
           { text: 'mysql安装', link: '/docker/mysql/mysql' },
           { text: 'redis安装', link: '/docker/redis' },
+          { text: 'nacos安装', link: '/docker/nacos' },
         ]
       }
     ],
