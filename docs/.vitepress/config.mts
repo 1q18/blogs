@@ -26,7 +26,9 @@ export default defineConfig({
         text: 'docker',
         items: [
           { text: 'docker安装', link: '/docker/安装docker' },
-          { text: 'rustserver自建服务器', link: '/docker/安装rustserver' }
+          { text: 'rustserver自建服务器', link: '/docker/安装rustserver' },
+          { text: 'mysql安装', link: '/docker/mysql/mysql' },
+          { text: 'redis安装', link: '/docker/redis' },
         ]
       }
     ],

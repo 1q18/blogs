@@ -1,8 +1,9 @@
+[toc]
 
 # cenos 安装 docker
 
 
-### 正文
+## 正文
 1. 清理旧版本
 ```shell
 # 查看安装过的docker
@@ -19,7 +20,7 @@ yum install -y yum-utils device-mapper-persistent-data lvm2
 # （阿里仓库）
 yum-config-manager --add-repo http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
 ```
-#### Docker 安装
+## Docker 安装
 4. 安装docker
 ```shell
 # 查看版本
@@ -38,7 +39,7 @@ systemctl enable docker    # 开机启动
 # --rm 在命令运行完毕后，自动删除容器。
 docker run --rm hello-world 
 ```
-#### Docker Compose 安装
+## Docker Compose 安装
 7. 安装 docker compose
 ``` shell
 # 下载文件
@@ -50,7 +51,7 @@ chmod +x /usr/local/bin/docker-compose
 # 验证
 docker-compose --version
 ```
-### 常用命令
+## 常用命令
 
 Docker 常用命令
 ```shell
@@ -85,7 +86,7 @@ docker exec -it 容器id /bin/bash
 # 进入容器后退出容器(容器内执行)
 exit
 ```
-#### Docker Compose 常用命令
+## Docker Compose 常用命令
 > linux 下尝试执行格式为：docker compose
 > windows 下尝试执行格式为：docker-compose
 ```shell
@@ -103,7 +104,7 @@ docker-compose down --volumes --rmi all
 docker-compose pull && docker-compose -f docker-compose.yaml up -d
 ```
 
-### 镜像加速
+## 镜像加速
 
 [阿里加速地址](https://cr.console.aliyun.com/cn-hangzhou/instances/mirrors)
 针对Docker客户端版本大于 1.10.0 的用户

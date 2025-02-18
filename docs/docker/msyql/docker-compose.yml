@@ -1,0 +1,27 @@
+services:
+  mysql:
+    image: mysql:8.0.34  # 指定稳定版本
+    container_name: mysql8
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: Okra1Q18Toor***  # 设置强密码
+      MYSQL_DATABASE: app_db
+      MYSQL_USER: kongyz
+      MYSQL_PASSWORD: Kongyz***
+    ports:
+      - "30010:3306"
+    volumes:
+      - /root/docker/mysql/data:/var/lib/mysql
+      - /root/docker/mysql/conf:/etc/mysql/conf.d
+      - /root/docker/mysql/logs:/var/log/mysql
+    networks:
+      - backend
+    security_opt:
+      - no-new-privileges:true
+
+volumes:
+  mysql_data:
+
+networks:
+  backend:
+    driver: bridge
