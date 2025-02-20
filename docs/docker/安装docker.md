@@ -85,6 +85,8 @@ docker rmi 镜像名或镜像id
 docker exec -it 容器id /bin/bash
 # 进入容器后退出容器(容器内执行)
 exit
+# 查看容器的IP
+docker inspect mysql-container | grep '"IPAddress"'
 ```
 ## Docker Compose 常用命令
 > linux 下尝试执行格式为：docker compose
@@ -136,3 +138,38 @@ Docker 官方和国内很多云服务商都提供了国内加速器服务，例�
 - 阿里云：https://<你的ID>.mirror.aliyuncs.com
 - 七牛云加速器：https://reg-mirror.qiniu.com
 
+
+## 简历桥接网络
+
+> 在同一台服务器上，使用桥接网络可以让容器在同一个局域网中，
+
+1. 创建自定义桥接网络：
+```bash
+docker network create -d bridge my_bridge_network
+```
+
+2. 查看当前所有网络以确认新网络已被创建：
+```bash
+docker network ls
+```
+
+3. 将现有容器连接到新网络：
+```bash
+docker network connect my_bridge_network container1
+docker network connect my_bridge_network container2
+```
+4. 验证网络配置：
+```bash
+docker network inspect my_bridge_network
+```
+
+### docker-compose 使用桥接网络
+
+```bash
+services:
+  web:
+    image: nginx
+    networks:
+      my_bridge_network:
+        ipv4_address: 192.168.3.10  # 不设置，则自动分配IP
+```

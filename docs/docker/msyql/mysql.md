@@ -94,7 +94,8 @@ services:
       - /root/docker/mysql/conf:/etc/mysql/conf.d
       - /root/docker/mysql/logs:/var/log/mysql
     networks:
-      - backend
+      mysql-bridge-network: 
+        ipv4_address: 192.168.3.10  # 设置固定IP
     security_opt:
       - no-new-privileges:true
 
@@ -102,8 +103,12 @@ volumes:
   mysql_data:
 
 networks:
-  backend:
+  mysql-bridge-network:
     driver: bridge
+    ipam:
+      config:
+        - subnet: "192.168.3.0/24"  # 设置桥接网络
+          gateway: "192.168.3.1"   
 ```
 
 ## 常用mysql命令

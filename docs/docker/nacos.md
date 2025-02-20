@@ -29,6 +29,8 @@ MYSQL_SERVICE_USER=nacos
 MYSQL_SERVICE_PASSWORD=nacos***
 # 数据库连接参数	
 MYSQL_SERVICE_DB_PARAM=characterEncoding=utf8&connectTimeout=1000&socketTimeout=3000&autoReconnect=true&useUnicode=true&useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true
+# 开启鉴权
+NACOS_AUTH_ENABLE = true
 # nacos.core.auth.server.identity.key	
 # Nacos Server节点身份信息的key，用户Server节点之间通信的识别，当开启鉴权时为必填项
 NACOS_AUTH_IDENTITY_KEY=okra
