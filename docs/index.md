@@ -3,8 +3,8 @@
 layout: home
 
 hero:
-  name: "煮酒话短长"
-  text: "我的地盘，我的酒"
+  name: "Okra"
+  text: "Okra 学习笔记"
   tagline: 
   actions:
     - theme: brand
